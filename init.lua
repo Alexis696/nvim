@@ -3,9 +3,7 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set number")
--- vim.cmd("set wildmenu")
--- vim.cmd("set wildmode=longest:full,full")
--- vim.cmd("set wildoptions=pum")
+vim.cmd("set scrolloff=15")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -38,13 +36,14 @@ require("lazy").setup({
 
 -- Gruvbox theme
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme kanagawa]])
 vim.cmd [[
   highlight Normal guibg=none
   highlight NonText guibg=none
   highlight Normal ctermbg=none
   highlight NonText ctermbg=none
 ]]
+vim.cmd("hi LineNr guibg=NONE")
 
 -- Split into panes
 vim.keymap.set("n", "<leader>s", ":split <CR>")
